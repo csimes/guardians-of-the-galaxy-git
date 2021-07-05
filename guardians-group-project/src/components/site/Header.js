@@ -5,7 +5,7 @@ import OpenWeatherApp from "../apps/open-weather/OpenWeatherApp";
 
 const AppToggle = () => {
     const [rSelected, setRSelected] = useState(null);
-    
+  
     return (
         <div>
             <h5>Click to see your:</h5>
@@ -21,6 +21,9 @@ const AppToggle = () => {
                     color="primary"
                     onClick={NasaPhoto}
                     // active={rSelected === 2}
+                    >
+                    onClick={() => setRSelected(2)}
+                    active={rSelected === 2}
                     >
                     Satellite Image
                 </Button>
