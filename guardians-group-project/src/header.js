@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import { Button, ButtonGroup } from "reactstrap";
+import React, { useState } from "react";
 
 const AppToggle = (props) => {
     const [rSelected, setRSelected] = useState(null);
-    
+
     return (
         <div>
             <h5>Click to see your:</h5>
@@ -12,14 +12,14 @@ const AppToggle = (props) => {
                     color="primary"
                     onClick={() => setRSelected(1)}
                     active={rSelected === 1}
-                    >
+                >
                     Local Forecast
                 </Button>
                 <Button
                     color="primary"
                     onClick={() => setRSelected(2)}
                     active={rSelected === 2}
-                    >
+                >
                     Satellite Image
                 </Button>
                 <Button
@@ -29,10 +29,10 @@ const AppToggle = (props) => {
                     Local Events
                 </Button>
             </ButtonGroup>
-            
+
             {/* <p>Selected: {rSelected}</p> */}
 
-            
+
         </div>
     );
 };
