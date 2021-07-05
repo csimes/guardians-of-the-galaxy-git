@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Location from "./components/site/Location";
-import NasaApp from "./components/apps/nasa/NasaApp";
+// import NasaApp from "./components/apps/nasa/NasaApp";
 import OpenWeatherApp from "./components/apps/open-weather/OpenWeatherApp";
 import AppToggle from "./header";
 import Footer from "./footer";
@@ -18,9 +18,9 @@ const App = () => {
             <br />
             <Location />
             <OpenWeatherApp/>
-            <NasaApp />
-            <Footer />
+            {/* <NasaApp /> */}
             {/* <TicketMasterApp /> */}
+            <Footer />
         </div>
     );
 
