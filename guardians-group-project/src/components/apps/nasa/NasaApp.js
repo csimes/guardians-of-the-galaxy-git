@@ -7,7 +7,7 @@ const NasaPhoto = () => {
         window.localStorage.getItem("lon")
     )}&lat=${JSON.parse(
         window.localStorage.getItem("lat")
-    )}&date=2021-07-03&dim=0.15&api_key=${config.REACT_APP_NASA_API_KEY}`;
+    )}&dim=0.15&api_key=${config.REACT_APP_NASA_API_KEY}`;
 
     return (
         <div>
