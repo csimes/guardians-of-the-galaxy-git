@@ -1,22 +1,27 @@
-import React, { Component } from "react";
-
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-
 import Location from "./components/site/Location";
-import NasaPhoto from "./components/apps/nasa/NasaPhoto";
-
-
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <Location />
-                <NasaPhoto />
-            </div>
-    );
-}
-    }
+import NasaApp from "./components/apps/nasa/NasaApp";
+import OpenWeatherApp from "./components/apps/open-weather/OpenWeatherApp";
+import AppToggle from "./components/site/AppToggle";
+// import TicketMasterApp from "./components/apps/ticket-master/TicketMasterApp";
     
+
+const App = (props) => {
+
+    
+    return (
+        <div className="App">
+            <AppToggle />
+            <br />
+            <Location />
+            <OpenWeatherApp/>
+            <NasaApp />
+            {/* <TicketMasterApp /> */}
+        </div>
+    );
+
+}
 
 export default App;

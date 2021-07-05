@@ -1,88 +1,42 @@
-import React, { Component } from "react";
-import config from "../../config";
+import React, { useEffect, useState } from 'react';
 
-class Location extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            latitude: null,
-            longitude: null,
-            userLocation: null,
-        };
-        this.getLocation = this.getLocation.bind(this);
-        this.showPosition = this.showPosition.bind(this);
-        this.reverseGeocodeCoordinates =
-            this.reverseGeocodeCoordinates.bind(this);
-    }
+const Location = () => {
+    let [lat, setLat] = useState(null);
+    let [lon, setLon] = useState(null);
+    const [status, setStatus] = useState(null);
 
-    componentDidMount() {
-        window.onload = (event) => {
-            this.getLocation();
-        };
-    }
+    window.onload = () => {
+        getLocation();
+    };
+    const getLocation = () => {
+    if (!navigator.geolocation) {
+        setStatus('Geolocation is not supported by your browser');
+    } else {
+        setStatus('Locating...');
+        navigator.geolocation.getCurrentPosition((position) => {
+        setStatus(null);
+        setLat(position.coords.latitude);
+        setLon(position.coords.longitude);
+        window.localStorage.setItem("lat", JSON.stringify(position.coords.latitude));
+        window.localStorage.setItem("lon", JSON.stringify(position.coords.longitude));
+        }, () => {
+        setStatus('Unable to retrieve your location');
+        });}}
 
-    getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.showPosition);
-        } else {
-            alert("Geolocation not supported by this browser.");
-        }
-    }
-
-    showPosition(position) {
-        this.setState({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-        });
-        this.reverseGeocodeCoordinates()
-    }
-
-    reverseGeocodeCoordinates() {
-        fetch(
-            `https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}&sensor=false&key=${config.REACT_APP_GOOGLE_API_KEY}`
-        )
-        .then(response => response.json())
-        .then(data => this.setState({
-            userLocation: data.results[4].formatted_address
-        }))
-        .catch(error => alert(error))
-    }
-
-    handleLocationError(error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                alert("User denied access to geolocation.");
-                break;
-            case error.POSITION_UNAVAILABLE:
-                alert("Location info unavailable.");
-                break;
-            case error.TIMEOUT:
-                alert("The request timed out.");
-                break;
-            case error.UNKNOWN_ERROR:
-                alert("An unknown error occurred.");
-                break;
-            default:
-                alert("An unknown error occurred.");
-        }
-    }
-
-
-
-    render() {
-        return (
-            <div className="Location">
-                <h2>Plan your next event!</h2>
-                <br />
-                <h4>Current Location:</h4>
-                <p>City: {this.state.userLocation}</p>
-            </div>
-        );
-    }
+    
+    return (
+        <div className="Location">
+            <h2>Plan your next event!</h2>
+            <br />
+            <h3>Current Location:</h3>
+            <p>{status}</p>
+            <p>Latitude: {lat}</p>
+            <p>Longitude: {lon}</p>
+            {/* <NasaPhoto lat={lat} lon={lon} /> */}
+            {/* <OpenWeatherApp lat={lat} lon={lon}/> */}
+            {/* <h4>City: {city}</h4> */}
+        </div>
+    );
 }
 
-
 export default Location;
-
-export const Latitude = React.createContext(this.state.latitude)
-export const Longitude = React.createContext(this.state.longitude);
