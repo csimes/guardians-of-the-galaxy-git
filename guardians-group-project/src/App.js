@@ -22,6 +22,8 @@ const App = () => {
             <Location />
             <NasaApp />
             <br/>
+            <h3>Nearby Events:</h3>
+            <br/>
             <TicketMasterApp />
             <br/>
             <Footer />
