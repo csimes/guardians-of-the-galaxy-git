@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.css";
 import NasaPhoto from "../apps/nasa/NasaApp";
 import OpenWeatherApp from "../apps/open-weather/OpenWeatherApp";
 

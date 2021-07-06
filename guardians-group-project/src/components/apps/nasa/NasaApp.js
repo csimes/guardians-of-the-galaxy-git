@@ -1,5 +1,4 @@
-import React from // useState, useEffect
-"react";
+import React from "react";
 import config from "../../../config";
 
 const NasaPhoto = () => {
@@ -14,7 +13,7 @@ const NasaPhoto = () => {
             <img
                 src={url}
                 alt="Nasa Satellite"
-                style={{ width: 500, height: 600 }}
+                style={{ width: '50%', height: '50%' }}
             />
         </div>
     );
