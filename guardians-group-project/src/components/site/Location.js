@@ -39,8 +39,8 @@ const Location = () => {
         <div className="Location">
             <List type="inline" style={{fontSize: '1.5rem'}}>
                 <ListInlineItem style={{fontWeight: '700'}}>Current Location:</ListInlineItem>
-                <ListInlineItem>latitude: {lat}</ListInlineItem>
-                <ListInlineItem>longitude: {lon}</ListInlineItem>
+                <ListInlineItem>Latitude: {lat},</ListInlineItem>
+                <ListInlineItem>Longitude: {lon}</ListInlineItem>
             </List>
             <br />
             <p>{status}</p>
