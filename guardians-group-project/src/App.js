@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Location from "./components/site/Location";
 import NasaApp from "./components/apps/nasa/NasaApp";
@@ -14,19 +13,19 @@ const App = () => {
     return (
         <div className="App">
             <br/>
-            <Location />
-            <br/>
             <Header />
             <br/>
             <AppToggle />
             <br/>
             <OpenWeatherApp/>
             <br/>
+            <Location />
             <NasaApp />
             <br/>
             <TicketMasterApp />
             <br/>
             <Footer />
+            <br/>
         </div>
     );
 };

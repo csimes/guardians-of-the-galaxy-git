@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup } from "reactstrap";
 
-const WeatherStyle = (props) => {
+const WeatherToggle = (props) => {
     const [rSelected, setRSelected] = useState(null);
 
     return (
@@ -22,10 +22,8 @@ const WeatherStyle = (props) => {
                     Fahrenheit
                 </Button>
             </ButtonGroup>
-
-            {/* <p>Selected: {rSelected}</p> */}
         </div>
     );
 };
 
-export default WeatherStyle;
+export default WeatherToggle;
