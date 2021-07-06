@@ -24,7 +24,6 @@ function OpenWeatherApp() {
         setTemp(temp);
         setFeels(feels_like);
         setOverall(overall);
-        console.log(data);
     };
     
     useEffect(() => {
