@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import config from "../../../config";
-import WeatherDisplay from "./WeatherDisplay";
+import WeatherStyle from "./WeatherStyle";
 
 function OpenWeatherApp() {
     const [results, setResults] = useState([]);
@@ -37,7 +37,7 @@ function OpenWeatherApp() {
             <h4>Temp: {temp}</h4>
             <h4>Feels-like: {feels_like}</h4>
             <h4>Overall: {overall}</h4>
-            <WeatherDisplay />
+            <WeatherStyle />
         </div>
     );
 };
