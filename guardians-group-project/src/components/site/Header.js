@@ -1,41 +1,11 @@
-import React, { useState } from "react";
-import { Button, ButtonGroup } from "reactstrap";
-import NasaPhoto from "../apps/nasa/NasaApp";
-import OpenWeatherApp from "../apps/open-weather/OpenWeatherApp";
+import React from "react";
 
-const AppToggle = () => {
-    const [rSelected, setRSelected] = useState(null);
-
+function Header() {
     return (
         <div>
-            <h5>Click to see your:</h5>
-            <ButtonGroup>
-                <Button
-                    color="primary"
-                    onClick={OpenWeatherApp}
-                    active={rSelected === 1}
-                    >
-                    Local Forecast
-                </Button>
-                <Button
-                    color="primary"
-                    onClick={NasaPhoto}
-                    active={rSelected === 2}
-                    >
-                    Satellite Image
-                </Button>
-                <Button
-                    color="primary"
-                    onClick={() => setRSelected(3)}
-                    active={rSelected === 3}>
-                    Local Events
-                </Button>
-            </ButtonGroup>
-            
-            {/* <p>Selected: {rSelected}</p> */}
-            
+            <h5>Plan your next event!</h5>
         </div>
     );
-};
+}
 
-export default AppToggle;
+export default Header;

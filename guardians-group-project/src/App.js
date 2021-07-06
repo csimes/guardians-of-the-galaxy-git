@@ -4,18 +4,19 @@ import "./App.css";
 import Location from "./components/site/Location";
 import NasaApp from "./components/apps/nasa/NasaApp";
 import OpenWeatherApp from "./components/apps/open-weather/OpenWeatherApp";
-import AppToggle from "./components/site/Header";
+import AppToggle from "./components/site/AppToggle";
 import Footer from "./components/site/Footer";
 import TicketMasterApp from "./components/apps/ticket-master/TicketMasterApp";
+import Header from "./components/site/Header";
 
 const App = () => {
 
     return (
         <div className="App">
             <br/>
-            <h2>Plan your next event!</h2>
-            <br/>
             <Location />
+            <br/>
+            <Header />
             <br/>
             <AppToggle />
             <br/>
